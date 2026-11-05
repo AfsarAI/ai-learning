@@ -1,7 +1,7 @@
+import os
 from openai import OpenAI
 from dotenv import load_dotenv
-import os
-
+from Utils.util import log
 
 load_dotenv()
 
@@ -14,20 +14,37 @@ clint = OpenAI(
     api_key=api_key,
 )
 
+messages = [{
+    "role": "system",
+    "content": "You are a helpful assistant. Answer accurately using the entire conversation history and within maximum 20 words only"
+}]
+
 while True:
     user_input = input("User: ")
 
     if user_input.lower() in ["exit", "bye", "goodbye", "quit"]:
         break
 
+    log(f"-> {model}")
+
+    messages.append({
+        "role":"user",
+        "content":user_input
+    })
+
+    log(f"   thinking...")
+        
     response = clint.chat.completions.create(
         model=model,
-        messages=[
-            {
-                "role": "user",
-                "content": user_input
-            }
-        ]
-    )
+        messages=messages
+    )  
 
-    print("LLM-" + response.choices[0].message.role + ": " + response.choices[0].message.content)
+    assistant_role = response.choices[0].message.role
+    assistant_reply = response.choices[0].message.content
+
+    messages.append({
+        "role": assistant_role,
+        "content": assistant_reply
+    })
+
+    print("LLM-" + assistant_role + ": " + assistant_reply)

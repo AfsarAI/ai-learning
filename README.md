@@ -66,6 +66,18 @@ I learn through a combination of educational content, academic resources, offici
 
 </details>
 
+<details>
+<summary><strong>Day 2 — Multi-Turn Conversation & System Prompts</strong></summary>
+
+- Multi-turn conversation history management (context retention across turns).
+- System prompt configuration for persona setting and response length constraint (within 20 words).
+- Tracking and appending user prompts and assistant replies to message history.
+- Custom debug logging utility with ANSI styling and `DEBUG` environment toggle.
+
+**Stack:** Python · OpenAI SDK · LLM APIs
+
+</details>
+
 ## 🛠️ My Existing Development Stack
 
 Python · FastAPI · Flask · Vue.js · JavaScript · SQL · PostgreSQL · REST APIs · Git
