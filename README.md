@@ -78,6 +78,21 @@ I learn through a combination of educational content, academic resources, offici
 
 </details>
 
+<details>
+<summary><strong>Day 3 — Function Calling, External Tools & Streaming AI Agent</strong></summary>
+
+- Real-time tool creation: implemented custom Python tools (`get_time_now`, `get_weather_for_city` via wttr.in).
+- OpenAI tool schema definition: built JSON schemas with `strict: True` and parameter validations.
+- Real-time streaming responses (`stream=True`): chunk-by-chunk token output in the terminal.
+- Streamed tool call reconstruction: parsed and aggregated chunked `delta.tool_calls` (name and arguments).
+- Multi-round autonomous agent loop: dynamic tool execution with `role: "tool"` feedback loop (up to 10 rounds).
+- Enhanced terminal logging: ANSI-colored debugging (`log`) and error reporting (`log_error`).
+- Safe execution: graceful interruption handling and comprehensive error catching.
+
+**Stack:** Python · OpenAI SDK · Function Calling / Tools · Requests API · Streaming Responses
+
+</details>
+
 ## 🛠️ My Existing Development Stack
 
 Python · FastAPI · Flask · Vue.js · JavaScript · SQL · PostgreSQL · REST APIs · Git
