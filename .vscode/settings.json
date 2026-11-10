@@ -1,0 +1,13 @@
+{
+    "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+    },
+    "editor.suggestOnTriggerCharacters": true,
+    "editor.inlineSuggest.enabled": true,
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.tabCompletion": "on",
+    "editor.wordBasedSuggestions": "allDocuments",
+    "editor.parameterHints.enabled": true
+}
